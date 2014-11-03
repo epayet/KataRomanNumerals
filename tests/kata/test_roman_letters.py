@@ -22,24 +22,6 @@ class ToRomanTestCase(unittest.TestCase):
         self.assertEqual("MMVIII", roman)
 
 
-class GetIsolatedNumbersTestCas(unittest.TestCase):
-    def test_get_one(self):
-        isolated = get_isolated_numbers(1)
-        self.assertEqual([1], isolated)
-
-    def test_get_eleven(self):
-        isolated = get_isolated_numbers(11)
-        self.assertEqual([10, 1], isolated)
-
-    def test_get_big_number(self):
-        isolated = get_isolated_numbers(1990)
-        self.assertEqual([1000, 900, 90], isolated)
-
-    def test_get_big_number_2(self):
-        isolated = get_isolated_numbers(2008)
-        self.assertEqual([2000, 8], isolated)
-
-
 class GetIsolatedRomanLetter(unittest.TestCase):
     def test_get_one(self):
         roman = get_isolated_roman(1)
@@ -72,6 +54,28 @@ class GetIsolatedRomanLetter(unittest.TestCase):
     def test_get_nine_hundred(self):
         roman = get_isolated_roman(900)
         self.assertEqual("CM", roman)
+
+    def test_get_4000(self):
+        roman = get_isolated_roman(4000)
+        self.assertEqual("MMMM", roman)
+
+
+class GetIsolatedNumbersTestCas(unittest.TestCase):
+    def test_get_one(self):
+        isolated = get_isolated_numbers(1)
+        self.assertEqual([1], isolated)
+
+    def test_get_eleven(self):
+        isolated = get_isolated_numbers(11)
+        self.assertEqual([10, 1], isolated)
+
+    def test_get_big_number(self):
+        isolated = get_isolated_numbers(1990)
+        self.assertEqual([1000, 900, 90], isolated)
+
+    def test_get_big_number_2(self):
+        isolated = get_isolated_numbers(2008)
+        self.assertEqual([2000, 8], isolated)
 
 
 class GetNumberPositionInStepTestCase(unittest.TestCase):

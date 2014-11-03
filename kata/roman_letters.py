@@ -29,8 +29,11 @@ def get_isolated_roman(number):
     step = get_current_step(number)
     position = get_number_position_in_step(number)
     simple_char = get_roman_char(step)
-    roman = ""
     start_with_5 = is_start_with_5(steps[step])
+    roman = ""
+
+    if step == 6 and position == 4:
+        return "MMMM"
 
     if not start_with_5:
         if position == 4:
